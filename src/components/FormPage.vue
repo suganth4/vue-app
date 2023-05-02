@@ -206,8 +206,6 @@ export default {
   },
   methods: {
     handleSubmit: function () {
-      console.log("sdf", this.$v.email.email)
-      console.log("sdf")
       this.isSubmitted = true
       this.$v.$touch();
       if (this.$v.$invalid) {
@@ -225,7 +223,8 @@ export default {
         state: this.state,
         zipCode: this.zipCode,
         country: this.country,
-        comments: this.comments
+        comments: this.comments,
+        qualification: this.qualification
       }
       this.users = [...this.users, data]
     },

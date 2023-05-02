@@ -1,14 +1,13 @@
 <template>
-    <div class="container">
+    <div class="container-md">
         <Header></Header>
         <div class="image-container">
             <div class="data-container">
                 <p class="description">We take care Marketing things</p>
                 <button class="blueButton">Pick a Plan</button>
             </div>
-            <div>
-                <img src="../assets/Illustration.png" class="main-image" />
-            </div>
+            <img src="../assets/Illustration.png" class="main-image " />
+
         </div>
         <div class="main">
             <div class="main-head">
@@ -32,7 +31,7 @@
                 </div>
                 <div class="main-text">Explore Marketing Tips</div>
             </div>
-            <div class="card-container">
+            <div class="card-container card-group">
                 <div class="card">
                     <div class="card-img-container"><img src="../assets/MaskGroup1.png" class="card-img" />
                         <div class="small-card">
@@ -101,6 +100,10 @@ export default {
 </script>
 
 <style>
+.flex-md-wrap {
+    flex-wrap: wrap;
+}
+
 .container {
     font-family: "Merriweather";
     width: 1366px !important;
@@ -147,16 +150,9 @@ export default {
     height: 58px;
 }
 
-ul {
-    display: flex;
-    list-style: none;
-    gap: 32px;
-    margin: 0px !important;
-}
-
 li {
     font-size: 14px;
-    color: #1E202F;
+    color: #1E202F !important;
 }
 
 .menuItem {
@@ -173,7 +169,7 @@ li {
 }
 
 .main {
-    padding: 64px 78px 64px 0px;
+    padding: 64px 78px 64px 78px;
     display: flex;
     flex-direction: column;
     gap: 42px;
@@ -211,6 +207,7 @@ li {
 .image-container {
     padding-top: 63px;
     padding-bottom: 63px;
+    padding-left: 78px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -223,8 +220,7 @@ li {
 }
 
 .main-image {
-    width: 636px;
-    height: 542px;
+    max-width: 636px;
     margin-right: -10px;
 }
 
@@ -258,12 +254,20 @@ li {
     justify-content: space-between;
 }
 
+ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    margin: 0px !important;
+}
+
 .card {
-    flex-basis: 312px !important;
+    width: 312px !important;
     border: none !important;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    font-family: "Merriweather";
 }
 
 .card-detail {
@@ -331,12 +335,16 @@ p {
     height: 142px;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 78px 0px 0px;
+    padding: 0px 78px 0px 78px;
 }
 
 .footer-container {
     display: flex;
     align-items: center;
+}
+
+.footer-p {
+    text-align: right;
 }
 
 .footer-menuItem li {
@@ -352,4 +360,60 @@ p {
     letter-spacing: 0.5px;
     color: #82868A;
 }
-</style>
+
+@media screen and (max-width:575px) {
+    .navbar {
+        padding: 0px;
+    }
+
+    .data-container {
+        align-items: center;
+    }
+
+    .image-container {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .card-group {
+        align-items: center;
+    }
+
+    .main-image {
+        width: 300px;
+    }
+
+    .description {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .main-image {
+        padding-top: 20px;
+        margin-right: 0px;
+    }
+
+    .main {
+        padding-top: 10px;
+    }
+
+    .footer {
+        padding: 0px;
+    }
+
+    .footer-p {
+        text-align: center;
+    }
+
+    .main {
+        padding: 0px;
+    }
+
+    .main-text {
+        text-align: center;
+    }
+
+    .collapse ul {
+        gap: 10px;
+    }
+}</style>
